@@ -8,3 +8,6 @@ pub use crate::run_config::{get_config, get_custom_config, Config, Part};
 
 #[cfg(feature = "nom-macro")]
 mod nom_macros;
+
+mod traits;
+pub use traits::Solver;
