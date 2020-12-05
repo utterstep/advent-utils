@@ -1,8 +1,8 @@
-use std::{convert::TryFrom, error::Error};
+use std::{convert::TryFrom, error::Error, path::PathBuf};
 
 use crate::{get_config, Part};
 
-pub trait Solver: TryFrom<String, Error = Box<dyn Error>> {
+pub trait Solver: TryFrom<PathBuf, Error = Box<dyn Error>> {
     fn solve(&self, part: Part) -> String;
 
     fn day_number() -> u32;

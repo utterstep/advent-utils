@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use serde::{
     de,
     de::{DeserializeOwned, Unexpected},
@@ -32,12 +34,12 @@ impl<'de> Deserialize<'de> for Part {
 pub struct Config {
     pub part: Part,
     #[serde(default = "Config::default_input_file")]
-    pub input_file: String,
+    pub input_file: PathBuf,
 }
 
 impl Config {
-    fn default_input_file() -> String {
-        "full.txt".to_owned()
+    fn default_input_file() -> PathBuf {
+        "full.txt".into()
     }
 }
 
