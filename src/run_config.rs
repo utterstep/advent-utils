@@ -6,7 +6,7 @@ use serde::{
     Deserialize, Deserializer,
 };
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub enum Part {
     One,
     Two,
