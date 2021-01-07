@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::{fmt, path::PathBuf};
 
 use serde::{
     de,
@@ -6,10 +6,16 @@ use serde::{
     Deserialize, Deserializer,
 };
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Part {
     One,
     Two,
+}
+
+impl fmt::Display for Part {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Part {:?}", self)
+    }
 }
 
 impl<'de> Deserialize<'de> for Part {
