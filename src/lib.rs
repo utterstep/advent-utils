@@ -1,5 +1,5 @@
 mod file_load;
-pub use crate::file_load::{parse_file, read_file};
+pub use crate::file_load::{parse_file, parse_raw_data, read_file};
 
 #[cfg(feature = "argparse")]
 mod run_config;
