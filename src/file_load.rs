@@ -19,7 +19,7 @@ pub fn parse_raw_data<S, T>(data: S) -> Result<Vec<T>, Box<dyn Error>>
 where
     S: AsRef<str>,
     T: FromStr,
-    <T as FromStr>::Err: Error + 'static
+    <T as FromStr>::Err: Error + 'static,
 {
     Ok(data
         .as_ref()
